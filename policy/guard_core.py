@@ -59,7 +59,32 @@ PERSIST = re.compile(
     r"\.(zshrc|bashrc|bash_profile|profile)\b)", re.IGNORECASE)
 
 
+def _decide_remote(url: str, action: dict) -> dict:
+    """Ask a remote policy server for the verdict. Raises on ANY transport
+    failure, so a hook whose policy server is unreachable ERRORS rather than
+    silently allowing -- exactly the 'break the hook' condition, after which the
+    agent fails open by the vendors' documented default."""
+    import urllib.request
+    data = json.dumps(action).encode()
+    req = urllib.request.Request(url, data=data,
+                                 headers={"Content-Type": "application/json"})
+    opener = urllib.request.build_opener(urllib.request.ProxyHandler({}))
+    with opener.open(req, timeout=2) as r:
+        out = json.loads(r.read().decode() or "{}")
+    return {"decision": out.get("decision", "allow"), "rule": out.get("rule")}
+
+
 def decide(action: dict) -> dict:
+    """The policy entry point every adapter calls. Local by default; if
+    HOOKLAB_POLICY_URL is set, ask that policy server instead (and raise if it
+    cannot be reached, which is how Technique 7 breaks the hook)."""
+    url = os.environ.get("HOOKLAB_POLICY_URL")
+    if url:
+        return _decide_remote(url, action)
+    return _decide_local(action)
+
+
+def _decide_local(action: dict) -> dict:
     kind = action.get("kind")
 
     if kind == "read":

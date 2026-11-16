@@ -15,9 +15,10 @@ sends anything off the machine.
 | Path | What it is |
 |---|---|
 | `policy/guard_core.py` | one shared credential-exfil / persistence deny-list |
+| `policy/policy_server.py` | the same deny-list served over HTTP, for the "break the hook" scenario: stop it and every hook that depends on it errors, then fails open |
 | `adapters/` | three adapters that speak each vendor's documented hook contract (Claude `PreToolUse`, Cursor `beforeShellExecution`/`beforeReadFile`, Codex `PreToolUse`) and route the one policy |
 | `drivers/run_matrix.py` | the deterministic matrix: feed each hook the exact tool call, record the decision, and on an allow perform the action and check the outcome |
-| `drivers/test_adapters.py` | unit tests for the three hook contracts |
+| `drivers/test_adapters.py`, `drivers/test_policy_server.py` | unit tests for the three hook contracts and for the policy-server break-the-hook result |
 | `live/` | wires each agent's real hook and drives the real `claude` / `cursor-agent` / `codex` binaries |
 | `os/lineage.py` | process-lineage attribution over Endpoint Security (`eslogger`) events, with `test_lineage.py` |
 | `sandbox/sandbox_axis.sh` | Codex OS sandbox: network send under `workspace-write` vs `danger-full-access` |
@@ -54,8 +55,9 @@ bash run_bundle.sh --live        # uses your Claude / Cursor / Codex accounts
 
 ## Reproducing on a spare account
 
-Use a throwaway VM or a spare user account. The policy, the three adapters, and
-the attribution analyser each ship with unit tests (`python3 drivers/test_adapters.py`,
+Use a throwaway VM or a spare user account. The policy, the three adapters, the
+policy-server break-the-hook result, and the attribution analyser each ship with
+unit tests (`python3 drivers/test_adapters.py`, `python3 drivers/test_policy_server.py`,
 `python3 os/test_lineage.py`) that pass offline.
 
 ## Safety
