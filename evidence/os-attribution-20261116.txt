@@ -1,0 +1,44 @@
+agent pids: [86624]   processes: 199   actions: 36
+
+    pid  what                   ppid-walk  fork-line  responsible
+----------------------------------------------------------------------
+  86625  opened credential      reach      reach      LOST       
+  86627  opened credential      reach      reach      LOST       
+  86628  ran git                reach      reach      LOST       
+  86631  ran git                reach      reach      LOST       
+  86633  ran git                reach      reach      LOST       
+  86635  ran git                reach      reach      LOST       
+  86638  ran git                reach      reach      LOST       
+  86641  ran git                reach      reach      LOST       
+  86644  ran git                reach      reach      LOST       
+  86647  ran git                reach      reach      LOST       
+  86650  ran git                reach      reach      LOST       
+  86653  ran git                reach      reach      LOST       
+  86656  ran git                reach      reach      LOST       
+  86659  ran git                reach      reach      LOST       
+  86662  ran git                reach      reach      LOST       
+  86665  ran git                reach      reach      LOST       
+  86667  ran git                reach      reach      LOST       
+  86668  ran git                LOST       reach      LOST       
+  86670  ran git                reach      reach      LOST       
+  86672  ran git                reach      reach      LOST       
+  86673  ran git                reach      reach      LOST       
+  86678  ran git                reach      reach      LOST       
+  86679  ran git                reach      reach      LOST       
+  86680  ran git                reach      reach      LOST       
+  86681  ran git                reach      reach      LOST       
+  86682  ran git                reach      reach      LOST       
+  86684  ran git                reach      reach      LOST       
+  86687  ran git                reach      reach      LOST       
+  86690  ran git                reach      reach      LOST       
+  86692  ran git                reach      reach      LOST       
+  86693  ran git                LOST       reach      LOST       
+  86695  ran git                reach      reach      LOST       
+  86698  ran git                reach      reach      LOST       
+  86701  ran git                reach      reach      LOST       
+  86703  opened credential      reach      reach      LOST       
+  86712  opened credential      reach      reach      LOST       
+----------------------------------------------------------------------
+36 kernel-observed actions | attributed to agent: 36/36
+  by ppid-walk: 34  by fork-lineage: 36  by responsible: 0
+  re-parented (ppid lost, OS recovered): 2

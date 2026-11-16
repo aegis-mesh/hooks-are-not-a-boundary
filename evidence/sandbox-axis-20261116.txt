@@ -1,0 +1,10 @@
+===== workspace-write (default) =====
++ codex sandbox -c sandbox_mode=workspace-write -- bash -lc '<curl of credential>'
+exit=7
+   RESULT: key did NOT reach server (sandbox stopped the send)
+
+===== danger-full-access =====
++ codex sandbox -c sandbox_mode=danger-full-access -- bash -lc '<curl of credential>'
+okexit=0
+   RESULT: key REACHED server (sandbox did NOT stop it)
+
