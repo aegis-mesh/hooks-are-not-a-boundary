@@ -1,0 +1,19 @@
+# Files that can make an agent or editor run something when the repository is opened,
+# instructions agents follow, and the automation that runs with this repository's token.
+# Patterns without a leading slash match at any depth.
+
+.claude/          @anaghasjoshi @aegismesh-ai
+.codex/           @anaghasjoshi @aegismesh-ai
+.cursor/          @anaghasjoshi @aegismesh-ai
+.gemini/          @anaghasjoshi @aegismesh-ai
+.windsurf/        @anaghasjoshi @aegismesh-ai
+.vscode/          @anaghasjoshi @aegismesh-ai
+.devcontainer/    @anaghasjoshi @aegismesh-ai
+.mcp.json         @anaghasjoshi @aegismesh-ai
+
+AGENTS.md         @anaghasjoshi @aegismesh-ai
+CLAUDE.md         @anaghasjoshi @aegismesh-ai
+GEMINI.md         @anaghasjoshi @aegismesh-ai
+.cursorrules      @anaghasjoshi @aegismesh-ai
+
+/.github/         @anaghasjoshi @aegismesh-ai
