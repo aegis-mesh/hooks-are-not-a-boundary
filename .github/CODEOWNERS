@@ -10,10 +10,23 @@
 .vscode/          @anaghasjoshi @aegismesh-ai
 .devcontainer/    @anaghasjoshi @aegismesh-ai
 .mcp.json         @anaghasjoshi @aegismesh-ai
+.zed/             @anaghasjoshi @aegismesh-ai
+.idea/            @anaghasjoshi @aegismesh-ai
+.kiro/            @anaghasjoshi @aegismesh-ai
+.roo/             @anaghasjoshi @aegismesh-ai
+.continue/        @anaghasjoshi @aegismesh-ai
+.amazonq/         @anaghasjoshi @aegismesh-ai
+.junie/           @anaghasjoshi @aegismesh-ai
+.husky/           @anaghasjoshi @aegismesh-ai
+*.code-workspace  @anaghasjoshi @aegismesh-ai
+.envrc            @anaghasjoshi @aegismesh-ai
+opencode.json     @anaghasjoshi @aegismesh-ai
 
 AGENTS.md         @anaghasjoshi @aegismesh-ai
 CLAUDE.md         @anaghasjoshi @aegismesh-ai
 GEMINI.md         @anaghasjoshi @aegismesh-ai
 .cursorrules      @anaghasjoshi @aegismesh-ai
+.clinerules       @anaghasjoshi @aegismesh-ai
+.windsurfrules    @anaghasjoshi @aegismesh-ai
 
 /.github/         @anaghasjoshi @aegismesh-ai
